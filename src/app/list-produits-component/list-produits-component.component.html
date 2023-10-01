@@ -1,0 +1,44 @@
+Code : <input type="text" [(ngModel)]="search" >
+<div *ngFor="let produit of listProduits;let i=index">
+    <ol *ngIf="produit.code.toLowerCase().includes(search.toLowerCase())||search==''">
+        <li>produit: {{produit.libelle}} <button type="submit" (click)="modifiertva(produit.idProduit)" [disabled]="produit.tauxTVA==0.02">Ajuster TVA</button>
+          
+            <span *ngIf="show==true && j==produit.idProduit"> produit modifier </span>
+          
+            <ul>
+            <li>Identifiant : {{produit.idProduit}}</li>
+            <li>Code : {{produit.code}}</li>
+            <li *ngIf="produit.prixUnitaire<=50" [ngStyle]="{'color':'blue','font-style': 'italic', 'font-size': '20px'}">Prix Unitaire : {{produit.prixUnitaire}}</li>
+            <li *ngIf="produit.prixUnitaire>50">Prix Unitaire : {{produit.prixUnitaire}}</li>
+            <li>Taux TVA : {{produit.tauxTVA}}</li>
+          </ul>
+        </li>
+      </ol>
+</div>
+<div class="title">
+    <h1>Ajouter d'un produit</h1>
+    
+</div>
+<div class="formulaire">
+    <div class="form-group">
+        <label for="idProduit">IdProduit</label>
+        <input type="text" id="idProduit" [(ngModel)]="id">
+    </div>
+    <div class="form-group">
+        <label for="code">Code</label>
+        <input type="text" id="code"  [(ngModel)]="code">
+    </div>
+    <div class="form-group">
+        <label for="code">libelle</label>
+        <input type="text" id="libelle"  [(ngModel)]="libelle">
+    </div>
+    <div class="form-group">
+        <label for="tauxUnitaire">prix unitaire</label>
+        <input type="text" id="prixUnitaire"  [(ngModel)]="prixUnitaire">
+    </div>
+    <div class="form-group">
+        <label for="tauxTVA">Taux TVA</label>
+        <input type="text" id="tauxTVA"  [(ngModel)]="tauxTVA">
+    </div>
+    <button type="submit" (click)="submitForm()">Ajouter</button>
+</div>

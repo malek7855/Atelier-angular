@@ -1,0 +1,24 @@
+.title{
+    display: flex;
+    justify-content: center;
+    
+}
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.form-group{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+   
+}
+label{
+    width:100px; 
+}
+input{
+    width:200px; 
+
+}

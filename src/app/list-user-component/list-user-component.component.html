@@ -1,0 +1,21 @@
+<p>list-user-component works!</p>
+<input type="text" [(ngModel)]="search" >
+<table border="1px">
+        <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>birth Date</th>
+        <th>action</th>
+    </tr>
+    <tr *ngFor="let item of user;let i=index">
+       <div *ngIf="item.firstName.toLowerCase().includes(search.toLowerCase()) || search==''">
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td> 
+         <td>{{item.birthDate}}  </td>
+        <td> <button type="submit" (click)="deleteuser(i)" [disabled]="item.accountCategory=='Admin'">Delete</button> </td>
+
+       </div>
+    </tr>
+</table>
+    
+
