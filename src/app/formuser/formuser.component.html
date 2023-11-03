@@ -1,0 +1,19 @@
+<p>formuser works!</p>
+<form #f="ngForm">
+    <label>First name</label>
+    <input type="text" name="nom" [(ngModel)]="user.firstName" required #nameuser="ngModel" required minlength="3" pattern="[a-zA-Z]*">
+    <label>last name</label>
+    <input type="text" name="prenom" [(ngModel)]="user.lastName" required  minlength="3">
+    <label>birth day</label>
+    <input type="text" name="birthday" [(ngModel)]="user.birthDate">
+    <label>email</label>
+    <input type="text" name="email" [(ngModel)]="user.email" pattern="^[a-zA-Z0-9._-]+@gmail.com">
+    <label>password</label>
+    <input type="password" name="password" [(ngModel)]="user.password" pattern="^[a-zA-Z0-9]{8,}?">
+    <label>profession</label>
+    <input type="text" name="profession" [(ngModel)]="user.profession">
+    <label>category</label>
+    <input type="text" name="category" [defaultValue]="" [(ngModel)]="user.accountCategory">
+    <input type="submit" value="save" (click)="saveUser(f.value)" [disabled]="f.invalid">
+</form>
+

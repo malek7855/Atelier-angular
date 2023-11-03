@@ -11,6 +11,15 @@ import { C1Component } from './c1/c1.component';
 import { MainInvoiceComponent } from './main-invoice/main-invoice.component';
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ShowuserComponent } from './manageUser/showuser/showuser/showuser.component';
+import { DeleteUserComponent } from './manageUser/DeleteUser/delete-user/delete-user.component';
+import { GetproductComponent } from './main-product/getproduct/getproduct.component';
+import { GetproductbyidComponent } from './main-product/getproductbyid/getproductbyid.component';
+import { DeleteproductComponent } from './main-product/deleteproduct/deleteproduct.component';
+import { AdduserComponent } from './manageUser/AddUser/adduser/adduser.component';
+import { FormuserComponent } from './formuser/formuser.component';
+import { MainuserComponent } from './mainuser/mainuser.component';
 
 
 @NgModule({
@@ -23,12 +32,22 @@ import { InvoiceComponent } from './invoice/invoice.component';
     C1Component,
     MainInvoiceComponent,
     InvoiceListComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    ShowuserComponent,
+    DeleteUserComponent,
+    GetproductComponent,
+    GetproductbyidComponent,
+    DeleteproductComponent,
+    AdduserComponent,
+    FormuserComponent,
+    MainuserComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

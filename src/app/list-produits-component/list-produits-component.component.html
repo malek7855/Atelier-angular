@@ -42,3 +42,10 @@ Code : <input type="text" [(ngModel)]="search" >
     </div>
     <button type="submit" (click)="submitForm()">Ajouter</button>
 </div>
+<div *ngFor="let produit of ListProduit2">
+    <p>idProduit : {{produit.idProduit}}</p>
+    <p>code : {{produit.code}}</p>
+    <p>libelle : {{produit.libelle}}</p>
+    <p>prixUnitaire : {{produit.prixUnitaire}}</p>
+    <p>tauxTVA : {{produit.tauxTVA}}</p>   
+</div>

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "nom": "malek",
+      "prenom": "troudi",
+      "email": "malektoudi1999@gmail.com",
+      "password": "malekmalek",
+      "profession": "malek",
+      "category": "malek",
+      "id": 1
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "code": "TV_68",
+      "libelle": "TV",
+      "prixUnitaire": 20,
+      "tauxTVA": 20
+    }
+  ]
+}

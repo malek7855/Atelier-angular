@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produit } from '../models/Produit';
+import {ProduitServiceService} from '../service/service produit/produit-service.service';
 
 @Component({
   selector: 'app-list-produits-component',
   templateUrl: './list-produits-component.component.html',
   styleUrls: ['./list-produits-component.component.css']
 })
-export class ListProduitsComponentComponent {
+export class ListProduitsComponentComponent implements OnInit {
+  constructor(private produitService:ProduitServiceService ){}
+  ListProduit2!:Produit[];
+  ngOnInit(): void {
+      this.ListProduit2=this.produitService.getAllProducts();
+  }
   show=false;
   search='';
   id=0;
@@ -35,7 +41,6 @@ export class ListProduitsComponentComponent {
         libelle:this.libelle,
         prixUnitaire:this.prixUnitaire,
         tauxTVA:this.tauxTVA
-
       }
       this.listProduits.push(item);
       this.id=0;

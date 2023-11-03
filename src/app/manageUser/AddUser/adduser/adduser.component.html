@@ -1,0 +1,15 @@
+<form #f="ngForm">
+    <label>nom</label>
+    <input type="text" name="nom" [(ngModel)]="user.firstName" required #nameuser="ngModel">
+    <span *ngIf="nameuser.touched">
+    <span *ngIf="nameuser.errors?.['required']"></span>
+    required
+</span>
+    <label>prenom</label>
+    <input type="text" name="prenom" [(ngModel)]="user.lastName">
+    <label>email</label>
+    <input type="text" name="email" [(ngModel)]="user.email">
+    <label>age</label>
+    <input type="text" name="age" ngModel pattern="[0-9]{8}" #ageuser="ngModel">
+    <input type="submit" value="add user" (click)="showuser(nameuser)">
+</form>
